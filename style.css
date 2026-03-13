@@ -184,3 +184,43 @@ footer {
     margin-top: 40px;
     border-top: 3px solid var(--accent-color);
 }
+/* Gallery Styles */
+.gallery-img {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+/* Zodiac Light Background Overlays */
+.card.assamese-text {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.card.assamese-text::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15; /* This makes the image a very light background watermark */
+    z-index: -1;
+}
+
+/* Individual Zodiac Backgrounds */
+.bg-aries::before { background-image: url('images/bg-aries.png'); }
+.bg-taurus::before { background-image: url('images/bg-taurus.png'); }
+.bg-gemini::before { background-image: url('images/bg-gemini.png'); }
+.bg-cancer::before { background-image: url('images/bg-cancer.png'); }
+.bg-leo::before { background-image: url('images/bg-leo.png'); }
+.bg-virgo::before { background-image: url('images/bg-virgo.png'); }
+.bg-libra::before { background-image: url('images/bg-libra.png'); }
+.bg-scorpio::before { background-image: url('images/bg-scorpio.png'); }
+.bg-sagittarius::before { background-image: url('images/bg-sagittarius.png'); }
+.bg-capricorn::before { background-image: url('images/bg-capricorn.png'); }
+.bg-aquarius::before { background-image: url('images/bg-aquarius.png'); }
+.bg-pisces::before { background-image: url('images/bg-pisces.png'); }
