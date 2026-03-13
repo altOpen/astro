@@ -31,7 +31,7 @@ header {
 .top-bar {
     background-color: #08111a;
     text-align: center;
-    padding: 5px;
+    padding: 8px 5px;
     font-size: 0.9rem;
     color: var(--accent-color);
 }
@@ -69,6 +69,8 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    padding: 5px 0;
+    display: inline-block;
 }
 
 nav ul li a:hover, nav ul li a.active {
@@ -184,6 +186,7 @@ footer {
     margin-top: 40px;
     border-top: 3px solid var(--accent-color);
 }
+
 /* Gallery Styles */
 .gallery-img {
     transition: transform 0.3s ease;
@@ -224,3 +227,58 @@ footer {
 .bg-capricorn::before { background-image: url('images/bg-capricorn.png'); }
 .bg-aquarius::before { background-image: url('images/bg-aquarius.png'); }
 .bg-pisces::before { background-image: url('images/bg-pisces.png'); }
+
+/* =========================================
+   MOBILE RESPONSIVENESS (MEDIA QUERIES)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    /* Stack navigation and center it */
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+
+    /* Wrap navigation links so they don't overflow the screen */
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+
+    /* Stack the Hero section (Photo on top, text below) */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Make the Astrologer Photo smaller on mobile */
+    .hero-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Force grids to display as a single column on small screens */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Add padding to the main container so content doesn't touch screen edges */
+    main {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    /* Ensure certificates wrap nicely */
+    .certificates .grid-container img {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}
