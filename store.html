@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual Store | Shri Shri Nabagraha Jyotish Kendra</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Store Specific Styles for an Attractive E-commerce Look */
+        .store-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Search and Filter Section */
+        .store-controls {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-color);
+        }
+
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            background: #f4f4f4;
+            color: var(--text-dark);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--accent-color);
+        }
+
+        /* Product Cards */
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-category-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            background: #fdfbf7;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .product-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .wa-btn {
+            background: #25D366; /* WhatsApp Green */
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .wa-btn:hover {
+            background: #1ebe57;
+        }
+
+        /* Hide items when filtered */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        Contact: +91 7002578721 | Location: Baratali, Shyamorai Mandir Path, Palashbari
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Shri Shri Nabagraha Jyotish Kendra</h1>
+                <span>Astrologer Anup Sharma</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gemstones.html">Gemstones</a></li>
+                    <li><a href="horoscope.html">Horoscope</a></li>
+                    <li><a href="store.html" class="active">Store</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="store-header">
+            <h2 style="color: var(--primary-color);">Spiritual Store (পবিত্ৰ সামগ্ৰী)</h2>
+            <p>Authentic, energized, and highly effective spiritual items carefully curated for you.</p>
+        </div>
+
+        <div class="store-controls">
+            <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search for Rudraksh, Yantra, Sindoor..." onkeyup="filterStore()">
+            
+            <div class="category-filters">
+                <button class="filter-btn active" onclick="filterCategory('all')">All Items</button>
+                <button class="filter-btn" onclick="filterCategory('sacred-beads')">Sacred Beads (মালা)</button>
+                <button class="filter-btn" onclick="filterCategory('yantra')">Yantras (যন্ত্ৰ)</button>
+                <button class="filter-btn" onclick="filterCategory('puja')">Puja Essentials (পূজাৰ সামগ্ৰী)</button>
+                <button class="filter-btn" onclick="filterCategory('sacred-items')">Sacred Items (পবিত্ৰ সামগ্ৰী)</button>
+            </div>
+        </div>
+
+        <div class="grid-container" id="productGrid">
+
+            <div class="product-card" data-category="sacred-beads">
+                <div class="product-category-badge">Beads</div>
+                <img src="images/rudraksh.png" alt="5 Mukhi Rudraksh" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Rudraksh'">
+                <h3 class="product-title">5-Mukhi Rudraksh</h3>
+                <p class="product-desc">Authentic and energized 5-Mukhi Rudraksh for peace of mind, health, and spiritual growth.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('5-Mukhi Rudraksh')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="sacred-beads">
+                <div class="product-category-badge">Beads</div>
+                <img src="images/tulsi.png" alt="Tulsi Maala" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Tulsi+Maala'">
+                <h3 class="product-title">Tulsi Maala</h3>
+                <p class="product-desc">Pure Tulsi wood maala for chanting (Japa) and wearing. Purifies the mind and brings devotion.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Tulsi Maala')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="yantra">
+                <div class="product-category-badge">Yantra</div>
+                <img src="images/navagraha-yantra.png" alt="Navagraha Yantra" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Navagraha+Yantra'">
+                <h3 class="product-title">Navagraha Yantra</h3>
+                <p class="product-desc">A powerful geometric plate to balance the energies of all 9 planets in your Kundali.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Navagraha Yantra')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="yantra">
+                <div class="product-category-badge">Yantra</div>
+                <img src="images/vastu-yantra.png" alt="Bastu Dosh Yantra" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Bastu+Yantra'">
+                <h3 class="product-title">Bastu Dosh Yantra</h3>
+                <p class="product-desc">Eliminates negative energies and structural Vastu defects from your home or office space.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Bastu Dosh Yantra')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="puja">
+                <div class="product-category-badge">Puja</div>
+                <img src="images/karpur-fresh.png" alt="Karpur Freshner" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Karpur+Freshner'">
+                <h3 class="product-title">Karpur Freshner</h3>
+                <p class="product-desc">Natural camphor-based room freshener to drive away negativity and keep the environment pure.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Karpur Freshner')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="puja">
+                <div class="product-category-badge">Puja</div>
+                <img src="images/karpur.png" alt="Pure Karpur" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Pure+Karpur'">
+                <h3 class="product-title">Pure Karpur (Camphor)</h3>
+                <p class="product-desc">100% pure bhimseni karpur for daily Aarti and removing negative auras from your surroundings.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Pure Karpur')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="sacred-items">
+                <div class="product-category-badge">Sacred</div>
+                <img src="images/sindoor.png" alt="Kamakhya Sindoor" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Kamakhya+Sindoor'">
+                <h3 class="product-title">Kamakhya Sindoor</h3>
+                <p class="product-desc">Authentic Kamakhya Sindoor from Assam, highly revered for blessings, protection, and desires.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Kamakhya Sindoor')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="sacred-items">
+                <div class="product-category-badge">Sacred</div>
+                <img src="images/gomati.png" alt="Gomati Chakra & Kaudi" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Gomati+Chakra'">
+                <h3 class="product-title">Gomati Chakra / Yellow Kaudi</h3>
+                <p class="product-desc">Used in wealth rituals and kept in cash boxes to attract the blessings of Goddess Lakshmi.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Gomati Chakra / Yellow Kaudi')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="sacred-items">
+                <div class="product-category-badge">Sacred</div>
+                <img src="images/yagya-ash.png" alt="Yagya Ash" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Yagya+Ash'">
+                <h3 class="product-title">Yagya Ash (Bhasma)</h3>
+                <p class="product-desc">Sacred ash collected from powerful Vedic Homas. Applied to the forehead for spiritual protection.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Yagya Ash')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="sacred-items">
+                <div class="product-category-badge">Accessories</div>
+                <img src="images/mantra-cards.png" alt="Graha Mantra Cards" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Mantra+Cards'">
+                <h3 class="product-title">Graha Mantra Cards</h3>
+                <p class="product-desc">Beautifully printed, easy-to-read pocket cards containing powerful mantras for all 9 planets.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Graha Mantra Cards')">Order via WhatsApp</button>
+            </div>
+
+            <div class="product-card" data-category="sacred-beads">
+                <div class="product-category-badge">Wearable</div>
+                <img src="images/dhanyog.png" alt="Dhanyog Bracelet" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Dhanyog+Bracelet'">
+                <h3 class="product-title">Dhanyog Bracelet</h3>
+                <p class="product-desc">A highly energized bracelet specifically designed to attract wealth (Dhan) and clear financial blockages.</p>
+                <button class="wa-btn" onclick="buyOnWhatsApp('Dhanyog Bracelet')">Order via WhatsApp</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Shri Shri Nabagraha Jyotish Kendra. All Rights Reserved. | Baratali, Shyamorai Mandir Path, Palashbari</p>
+    </footer>
+
+    <script>
+        // 1. WhatsApp Redirection Logic
+        function buyOnWhatsApp(itemName) {
+            const phoneNumber = "917002578721"; // Your WhatsApp Number
+            const message = `Pranam Astrologer Anup Sharma,%0A%0AI am interested in purchasing the following item from your website:%0A%0A*Item:* ${itemName}%0A%0APlease let me know the price and delivery details. Thank you!`;
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // 2. Search and Category Filter Logic
+        let currentCategory = 'all';
+
+        function filterCategory(category) {
+            currentCategory = category;
+            
+            // Update Active Button Style
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            filterStore(); // Run the filter
+        }
+
+        function filterStore() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('.product-title').innerText.toLowerCase();
+                const category = card.getAttribute('data-category');
+                
+                // Check if it matches search AND category
+                const matchesSearch = title.includes(searchInput);
+                const matchesCategory = (currentCategory === 'all' || currentCategory === category);
+
+                if (matchesSearch && matchesCategory) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
