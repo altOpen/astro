@@ -97,39 +97,43 @@
             height: 180px;
             object-fit: contain;
             margin-bottom: 15px;
-            background: #fdfbf7;
+            background: #fcfcfc;
             border-radius: 8px;
             padding: 10px;
+            border: 1px solid #f0f0f0;
         }
 
         .product-title {
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 5px;
+            font-weight: bold;
         }
 
         .product-title-as {
             color: var(--accent-color);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 10px;
             font-weight: bold;
         }
 
         .product-desc {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.95rem;
+            color: #555;
             margin-bottom: 5px;
         }
         
         .product-desc-as {
-            font-size: 0.95rem;
-            color: #444;
+            font-size: 1rem;
+            color: #333;
             margin-bottom: 15px;
             flex-grow: 1;
+            font-weight: 500;
         }
 
+        /* WhatsApp & Out of Stock Buttons */
         .wa-btn {
-            background: #25D366; /* WhatsApp Green */
+            background: #25D366; 
             color: white;
             border: none;
             padding: 12px;
@@ -147,6 +151,14 @@
             background: #1ebe57;
         }
 
+        /* Disabled Out of Stock style */
+        .wa-btn:disabled, .out-of-stock-btn {
+            background: #e0e0e0 !important;
+            color: #888888 !important;
+            cursor: not-allowed !important;
+            box-shadow: none !important;
+        }
+
         /* Hide items when filtered */
         .hidden {
             display: none !important;
@@ -156,14 +168,14 @@
 <body>
 
     <div class="top-bar">
-        Contact: +91 7002578721 | Location: Baratali, Shyamorai Mandir Path, Palashbari
+        Shri Shri Nabagraha Jyotish Kendra, Palashbari
     </div>
 
     <header>
         <div class="nav-container">
             <div class="logo">
-                <h1>Shri Shri Nabagraha Jyotish Kendra</h1>
-                <span>Astrologer Anup Sharma</span>
+                <h1> শ্ৰী শ্ৰী নৱগ্ৰহ জ্যোতিষ কেন্দ্ৰ</h1>
+                <span>জ্যোতিষী অনুপ শৰ্মা</span>
             </div>
             <nav>
                 <ul>
@@ -172,8 +184,8 @@
                     <li><a href="gemstones.html">Gemstones</a></li>
                     <li><a href="horoscope.html">Horoscope</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="store.html" class="active">Store</a></li>
                     <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="store.html" class="active">Store</a></li>
                     <li><a href="contact.html">Book Now</a></li>
                 </ul>
             </nav>
@@ -181,9 +193,9 @@
     </header>
 
     <main>
-        <div class="store-header">
-            <h2 style="color: var(--primary-color);">Spiritual Store (পবিত্ৰ সামগ্ৰী)</h2>
-            <p>Authentic, energized, and highly effective spiritual items carefully curated for you.</p>
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%); border: 2px solid var(--accent-color); padding: 25px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.06); margin-bottom: 40px;">
+            <h2 style="text-align: center; color: var(--primary-color); font-size: 2.2rem; margin-bottom: 10px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">Spiritual Store (পবিত্ৰ সামগ্ৰী)</h2>
+            <p style="text-align: center; color: #2e8b57; font-weight: bold; font-size: 1.15rem; margin-bottom: 0;">Authentic, energized, and highly effective spiritual items carefully curated for you.</p>
         </div>
 
         <div class="store-controls">
@@ -202,112 +214,134 @@
                  
             <div class="product-card" data-category="sacred-beads">
                 <div class="product-category-badge">Beads</div>
-                <img src="images/rudraksh.png" alt="5 Mukhi Rudraksh" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Rudraksh'">
+                <img src="store/5m-rudraksha.png" alt="5 Mukhi Rudraksh" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Rudraksh'">
                 <h3 class="product-title">5-Mukhi Rudraksh</h3>
                 <h4 class="product-title-as">পঞ্চমুখী ৰুদ্ৰাক্ষ</h4>
                 <p class="product-desc">Authentic and energized 5-Mukhi Rudraksh for peace of mind, health, and spiritual growth.</p>
                 <p class="product-desc-as">মানসিক শান্তি, সুস্বাস্থ্য আৰু আধ্যাত্মিক বিকাশৰ বাবে প্ৰামাণিক আৰু প্ৰাণ প্ৰতিষ্ঠিত পঞ্চমুখী ৰুদ্ৰাক্ষ।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('5-Mukhi Rudraksh')">Order via WhatsApp</button>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="sacred-beads">
                 <div class="product-category-badge">Beads</div>
-                <img src="images/tulsi.png" alt="Tulsi Maala" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Tulsi+Maala'">
+                <img src="store/tulsi_maala.png" alt="Tulsi Maala" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Tulsi+Maala'">
                 <h3 class="product-title">Tulsi Maala</h3>
                 <h4 class="product-title-as">তুলসী মালা</h4>
                 <p class="product-desc">Pure Tulsi wood maala for chanting (Japa) and wearing. Purifies the mind and brings devotion.</p>
                 <p class="product-desc-as">জপ আৰু পৰিধান কৰাৰ বাবে বিশুদ্ধ তুলসী কাঠৰ মালা। ই মন পৱিত্ৰ কৰে আৰু ভক্তিভাৱ জগাই তোলে।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Tulsi Maala')">Order via WhatsApp</button>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="yantra">
                 <div class="product-category-badge">Yantra</div>
-                <img src="images/navagraha-yantra.png" alt="Navagraha Yantra" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Navagraha+Yantra'">
+                <img src="store/navagraha_yantra.png" alt="Navagraha Yantra" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Navagraha+Yantra'">
                 <h3 class="product-title">Navagraha Yantra</h3>
                 <h4 class="product-title-as">নৱগ্ৰহ যন্ত্ৰ</h4>
                 <p class="product-desc">A powerful geometric plate to balance the energies of all 9 planets in your Kundali.</p>
                 <p class="product-desc-as">আপোনাৰ জন্মকুণ্ডলীৰ ৯টা গ্ৰহৰ শক্তিৰ ভাৰসাম্য ৰক্ষা কৰিবলৈ এখন শক্তিশালী যন্ত্ৰ।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Navagraha Yantra')">Order via WhatsApp</button>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="yantra">
                 <div class="product-category-badge">Yantra</div>
-                <img src="images/vastu-yantra.png" alt="Bastu Dosh Yantra" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Bastu+Yantra'">
+                <img src="store/bastu_dosh_yantra.png" alt="Bastu Dosh Yantra" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Bastu+Yantra'">
                 <h3 class="product-title">Bastu Dosh Yantra</h3>
                 <h4 class="product-title-as">বাস্তু দোষ নিবাৰণ যন্ত্ৰ</h4>
                 <p class="product-desc">Eliminates negative energies and structural Vastu defects from your home or office space.</p>
                 <p class="product-desc-as">ঘৰ বা ব্যৱসায়িক প্ৰতিষ্ঠানৰ পৰা নেতিবাচক শক্তি আৰু বাস্তু দোষ দূৰ কৰে।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Bastu Dosh Yantra')">Order via WhatsApp</button>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="puja">
                 <div class="product-category-badge">Puja</div>
-                <img src="images/karpur-fresh.png" alt="Karpur Freshner" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Karpur+Freshner'">
-                <h3 class="product-title">Karpur Freshner</h3>
-                <h4 class="product-title-as">কৰ্পূৰ ফ্ৰেছনাৰ</h4>
-                <p class="product-desc">Natural camphor-based room freshener to drive away negativity and keep the environment pure.</p>
-                <p class="product-desc-as">নেতিবাচকতা দূৰ কৰিবলৈ আৰু পৰিৱেশ বিশুদ্ধ কৰি ৰাখিবলৈ প্ৰাকৃতিক কৰ্পূৰযুক্ত ৰুম ফ্ৰেছনাৰ।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Karpur Freshner')">Order via WhatsApp</button>
+                <img src="store/karpur_deffuser.png" alt="Karpur Diffuser" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Karpur+Diffuser'">
+                <h3 class="product-title">Karpur Diffuser</h3>
+                <h4 class="product-title-as">কৰ্পূৰ ডিফিউজাৰ</h4>
+                <p class="product-desc">Natural camphor-based room diffuser to drive away negativity and keep the environment pure.</p>
+                <p class="product-desc-as">নেতিবাচকতা দূৰ কৰিবলৈ আৰু পৰিৱেশ বিশুদ্ধ কৰি ৰাখিবলৈ প্ৰাকৃতিক কৰ্পূৰ ডিফিউজাৰ।</p>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="puja">
                 <div class="product-category-badge">Puja</div>
-                <img src="images/karpur.png" alt="Pure Karpur" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Pure+Karpur'">
+                <img src="store/karpur.png" alt="Pure Karpur" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Pure+Karpur'">
                 <h3 class="product-title">Pure Karpur (Camphor)</h3>
                 <h4 class="product-title-as">বিশুদ্ধ ভীমসেনী কৰ্পূৰ</h4>
                 <p class="product-desc">100% pure bhimseni karpur for daily Aarti and removing negative auras from your surroundings.</p>
                 <p class="product-desc-as">দৈনন্দিন আৰতি আৰু চাৰিওফালৰ নেতিবাচক আৱহ দূৰ কৰিবলৈ ১০০% বিশুদ্ধ ভীমসেনী কৰ্পূৰ।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Pure Karpur')">Order via WhatsApp</button>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="sacred-items">
                 <div class="product-category-badge">Sacred</div>
-                <img src="images/sindoor.png" alt="Kamakhya Sindoor" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Kamakhya+Sindoor'">
+                <img src="store/sindoor.png" alt="Kamakhya Sindoor" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Kamakhya+Sindoor'">
                 <h3 class="product-title">Kamakhya Sindoor</h3>
                 <h4 class="product-title-as">কামাখ্যা সেন্দূৰ</h4>
                 <p class="product-desc">Authentic Kamakhya Sindoor from Assam, highly revered for blessings, protection, and desires.</p>
                 <p class="product-desc-as">আশীৰ্বাদ, সুৰক্ষা আৰু মনোকামনা পূৰণৰ বাবে অসমৰ প্ৰামাণিক আৰু পৱিত্ৰ কামাখ্যা সেন্দূৰ।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Kamakhya Sindoor')">Order via WhatsApp</button>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="sacred-items">
                 <div class="product-category-badge">Sacred</div>
-                <img src="images/gomati.png" alt="Gomati Chakra & Kaudi" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Gomati+Chakra'">
-                <h3 class="product-title">Gomati Chakra / Yellow Kaudi</h3>
-                <h4 class="product-title-as">গোমতী চক্ৰ / হালধীয়া কড়ি</h4>
-                <p class="product-desc">Used in wealth rituals and kept in cash boxes to attract the blessings of Goddess Lakshmi.</p>
-                <p class="product-desc-as">ধন-সম্পত্তি বৃদ্ধিৰ ৰীতি-নীতিত ব্যৱহাৰ কৰা হয় আৰু মা লক্ষ্মীৰ আশীৰ্বাদ পাবলৈ ধন থোৱা বাকচত ৰখা হয়।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Gomati Chakra / Yellow Kaudi')">Order via WhatsApp</button>
+                <img src="store/gomti_chakra.png" alt="Gomti Chakra" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Gomti+Chakra'">
+                <h3 class="product-title">Gomti Chakra</h3>
+                <h4 class="product-title-as">গোমতী চক্ৰ</h4>
+                <p class="product-desc">Sacred shells found in the Gomti river, highly auspicious for welcoming Goddess Lakshmi.</p>
+                <p class="product-desc-as">গোমতী নদীত পোৱা পৱিত্ৰ চক্ৰ, মা লক্ষ্মীক আদৰিবলৈ আৰু ঘৰলৈ সমৃদ্ধি আনিবলৈ ব্যৱহাৰ কৰা হয়।</p>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
+            </div>
+            
+            <div class="product-card" data-category="sacred-items">
+                <div class="product-category-badge">Sacred</div>
+                <img src="store/yellow_kodi.png" alt="Yellow Kaudi" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Yellow+Kodi'">
+                <h3 class="product-title">Yellow Kaudi</h3>
+                <h4 class="product-title-as">হালধীয়া কড়ি</h4>
+                <p class="product-desc">Used in wealth rituals and kept in cash boxes or altars to attract financial blessings.</p>
+                <p class="product-desc-as">ধন-সম্পত্তি বৃদ্ধিৰ ৰীতি-নীতিত ব্যৱহাৰ কৰা হয় আৰু আৰ্থিক উন্নতিৰ বাবে ধন থোৱা বাকচত ৰখা হয়।</p>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="sacred-items">
                 <div class="product-category-badge">Sacred</div>
-                <img src="images/yagya-ash.png" alt="Yagya Ash" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Yagya+Ash'">
+                <img src="store/yagya_bhasma.png" alt="Yagya Ash" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Yagya+Ash'">
                 <h3 class="product-title">Yagya Ash (Bhasma)</h3>
                 <h4 class="product-title-as">যজ্ঞৰ ভস্ম</h4>
                 <p class="product-desc">Sacred ash collected from powerful Vedic Homas. Applied to the forehead for spiritual protection.</p>
                 <p class="product-desc-as">শক্তিশালী বৈদিক যজ্ঞৰ পৰা সংগ্ৰহ কৰা পৱিত্ৰ ভস্ম। আধ্যাত্মিক সুৰক্ষাৰ বাবে কপালত ব্যৱহাৰ কৰা হয়।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Yagya Ash')">Order via WhatsApp</button>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="sacred-items">
                 <div class="product-category-badge">Accessories</div>
-                <img src="images/mantra-cards.png" alt="Graha Mantra Cards" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Mantra+Cards'">
+                <img src="store/graha_mantra_card.png" alt="Graha Mantra Cards" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Mantra+Cards'">
                 <h3 class="product-title">Graha Mantra Cards</h3>
                 <h4 class="product-title-as">গ্ৰহ মন্ত্ৰ কাৰ্ড</h4>
                 <p class="product-desc">Beautifully printed, easy-to-read pocket cards containing powerful mantras for all 9 planets.</p>
                 <p class="product-desc-as">সকলো ৯টা গ্ৰহৰ শক্তিশালী মন্ত্ৰ থকা সুন্দৰ আৰু সহজে পঢ়িব পৰা পকেট কাৰ্ড।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Graha Mantra Cards')">Order via WhatsApp</button>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
             <div class="product-card" data-category="sacred-beads">
                 <div class="product-category-badge">Wearable</div>
-                <img src="images/dhanyog.png" alt="Dhanyog Bracelet" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Dhanyog+Bracelet'">
+                <img src="store/dhanyog.png" alt="Dhanyog Bracelet" class="product-img" onerror="this.src='https://via.placeholder.com/200?text=Dhanyog+Bracelet'">
                 <h3 class="product-title">Dhanyog Bracelet</h3>
                 <h4 class="product-title-as">ধনযোগ ব্ৰেচলেট</h4>
                 <p class="product-desc">A highly energized bracelet specifically designed to attract wealth (Dhan) and clear financial blockages.</p>
                 <p class="product-desc-as">ধন আকৰ্ষণ কৰিবলৈ আৰু অৰ্থনৈতিক বাধা দূৰ কৰিবলৈ বিশেষভাৱে প্ৰাণ প্ৰতিষ্ঠিত কৰা ব্ৰেচলেট।</p>
-                <button class="wa-btn" onclick="buyOnWhatsApp('Dhanyog Bracelet')">Order via WhatsApp</button>
+                
+                <button class="wa-btn out-of-stock-btn" disabled>Out of Stock (ষ্টকত নাই)</button>
             </div>
 
         </div>
