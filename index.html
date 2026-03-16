@@ -29,11 +29,11 @@
         .cert-img {
             width: 100%;
             height: 200px;
-            object-fit: contain; /* Changed to contain so entire certificate is visible */
+            object-fit: contain; 
             display: block;
             user-select: none;
             -webkit-user-drag: none;
-            pointer-events: none; /* Stops right click directly on the image */
+            pointer-events: none; 
             background-color: #f9f9f9;
         }
 
@@ -46,12 +46,12 @@
             justify-content: center;
             align-items: center;
             background: rgba(255, 255, 255, 0.1);
-            pointer-events: auto; /* Catches right clicks instead of the image */
+            pointer-events: auto; 
             z-index: 10;
         }
 
         .watermark-text {
-            color: rgba(13, 27, 42, 0.25); /* Semi-transparent dark blue */
+            color: rgba(13, 27, 42, 0.25); 
             font-size: 1.2rem;
             font-weight: 900;
             transform: rotate(-35deg);
@@ -104,41 +104,57 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" style="flex-direction: column; align-items: center; justify-content: center;">
             <img src="images/astrologer-photo.png" alt="Astrologer Anup Sharma" class="hero-img center-image" onerror="this.src='https://via.placeholder.com/300x300.png?text=Photo+Missing'">
-            <div class="hero-text">
+            
+            <div class="hero-text" style="width: 100%; max-width: 800px;">
 
-                <h1 style="text-align: center;">শ্ৰী শ্ৰী নৱগ্ৰহ জ্যোতিষ কেন্দ্ৰ, পলাশবাৰী</h1>
-                <h2 style="text-align: center;">Welcome to Shri Shri Nabagraha Jyotish Kendra</h2>
-                <h3 style="text-align: center;">Astrologer Anup Sharma</h3>
-                <h3 style="text-align: center;"><strong> জ্যোতিষী অনুপ শৰ্মা </strong></h3>
-                <h3 style="text-align: center;"> <strong>Gold Medalist</strong></h3>
-                <p style="text-align: center;"> Jyotish Gyan Acharya | Jyotish Gyan Bharati | Jyotish Gyan Shastri</p>
-                <p style="text-align: center;"> জ্যোতিষ জ্ঞান আচাৰ্য্য | জ্যোতিষ জ্ঞান ভাৰতী | জ্যোতিষ জ্ঞান শাস্ত্ৰী</p>
-                <br>
-                <p>Providing highly accurate predictions and remedies. Deeply rooted in the spiritual traditions of Assam, combining ancient wisdom with practical guidance to help you navigate life's challenges.</p>
-
-                <br>
-                <p> <strong>আপোনাৰ জীৱনৰ প্ৰতিটো সমস্যাৰ সঠিক সমাধানৰ ঠিকনা!
-বিবাহত পলম, কৰ্মক্ষেত্ৰত বাধা, ব্যৱসায়ত লোকচান নে ঘৰুৱা অশান্তি? গ্ৰহৰ দোষ নে বাস্তুৰ প্ৰভাৱ? কাৰণ যিয়েই নহওক, স্বৰ্ণপদক প্ৰাপ্ত জ্যোতিষী অনুপ শৰ্মাৰ নিৰ্ভুল পৰামৰ্শৰে জীৱনলৈ ঘূৰাই আনক শান্তি আৰু সমৃদ্ধি। সঠিক গ্ৰহ ৰত্নই সলনি কৰিব পাৰে আপোনাৰ জীৱনৰ দিশ। ১০০% বিশুদ্ধ আৰু প্ৰমাণিত গ্ৰহ ৰত্নৰ বাবে নিৰ্ভৰ কৰক শ্ৰী শ্ৰী নৱগ্ৰহ জ্যোতিষ কেন্দ্ৰৰ ওপৰত। ঘৰলৈ সুখ-শান্তি আহিব সঠিক বাস্তুৰ দ্বাৰা। ঘৰ বা ব্যৱসায়িক প্ৰতিষ্ঠানৰ বাস্তু দোষ নিবাৰণৰ বাবে আজিেই পৰামৰ্শ লওক। </strong> </p>
+                <h1 style="text-align: center; color: var(--primary-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.1); margin-top: 20px; font-size: 2.2rem;">শ্ৰী শ্ৰী নৱগ্ৰহ জ্যোতিষ কেন্দ্ৰ, পলাশবাৰী</h1>
+                <h2 style="text-align: center; color: #555; font-size: 1.2rem; margin-bottom: 20px;">Welcome to Shri Shri Nabagraha Jyotish Kendra</h2>
                 
-                <div class="info-box">
-                    <h4>Visiting Hours (চোৱা সময়):</h4>
-                    <ul>
-                        <li>Evening from 6:30 PM (সন্ধিয়া ৬:৩০ বজাৰ পৰা)</li>
+                <h3 style="text-align: center; color: var(--primary-color); font-size: 1.8rem;">Astrologer Anup Sharma</h3>
+                <h3 style="text-align: center; color: var(--accent-color); font-size: 1.6rem; margin-bottom: 10px;"><strong>জ্যোতিষী অনুপ শৰ্মা</strong></h3>
+                
+                <div style="text-align: center;">
+                    <span style="background-color: var(--accent-color); color: #fff; padding: 6px 20px; border-radius: 25px; font-size: 1.2rem; font-weight: bold; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px;">🏆 Gold Medalist</span>
+                </div>
+                
+                <p style="text-align: center; color: #0056b3; font-weight: bold; font-size: 1.1rem; margin-top: 10px;"> Jyotish Gyan Acharya | Jyotish Gyan Bharati | Jyotish Gyan Shastri</p>
+                <p style="text-align: center; color: #0056b3; font-weight: bold; margin-bottom: 25px;"> জ্যোতিষ জ্ঞান আচাৰ্য্য | জ্যোতিষ জ্ঞান ভাৰতী | জ্যোতিষ জ্ঞান শাস্ত্ৰী</p>
+
+                <p style="text-align: center; font-size: 1.1rem; color: #444; line-height: 1.8;">Providing highly accurate predictions and remedies. Deeply rooted in the spiritual traditions of Assam, combining ancient wisdom with practical guidance to help you navigate life's challenges.</p>
+
+                <div style="background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%); border: 2px solid var(--accent-color); padding: 25px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.06); margin: 30px 0;">
+                    <p style="text-align: center; color: var(--primary-color); font-size: 1.4rem; margin-bottom: 15px;"><strong>আপোনাৰ জীৱনৰ প্ৰতিটো সমস্যাৰ সঠিক সমাধানৰ ঠিকনা!</strong></p>
+                    
+                    <p style="text-align: center; color: #900000; font-weight: bold; font-size: 1.15rem; margin-bottom: 15px;">বিবাহত পলম, কৰ্মক্ষেত্ৰত বাধা, ব্যৱসায়ত লোকচান নে ঘৰুৱা অশান্তি? গ্ৰহৰ দোষ নে বাস্তুৰ প্ৰভাৱ?</p>
+                    
+                    <p style="text-align: center; color: #333; font-size: 1.05rem; margin-bottom: 15px; line-height: 1.7;">কাৰণ যিয়েই নহওক, স্বৰ্ণপদক প্ৰাপ্ত জ্যোতিষী অনুপ শৰ্মাৰ নিৰ্ভুল পৰামৰ্শৰে জীৱনলৈ ঘূৰাই আনক শান্তি আৰু সমৃদ্ধি। সঠিক গ্ৰহ ৰত্নই সলনি কৰিব পাৰে আপোনাৰ জীৱনৰ দিশ। <span style="color: var(--primary-color); font-weight: bold;">১০০% বিশুদ্ধ আৰু প্ৰমাণিত গ্ৰহ ৰত্নৰ</span> বাবে নিৰ্ভৰ কৰক শ্ৰী শ্ৰী নৱগ্ৰহ জ্যোতিষ কেন্দ্ৰৰ ওপৰত।</p>
+                    
+                    <p style="text-align: center; color: #2e8b57; font-weight: bold; font-size: 1.1rem;">ঘৰলৈ সুখ-শান্তি আহিব সঠিক বাস্তুৰ দ্বাৰা। ঘৰ বা ব্যৱসায়িক প্ৰতিষ্ঠানৰ বাস্তু দোষ নিবাৰণৰ বাবে আজিেই পৰামৰ্শ লওক।</p>
+                </div>
+                
+                <div class="info-box" style="text-align: center; border-radius: 8px;">
+                    <h4 style="color: var(--primary-color); font-size: 1.2rem; margin-bottom: 10px;">Visiting Hours (চোৱা সময়):</h4>
+                    <ul style="list-style-position: inside; padding: 0; font-size: 1.1rem; color: #444;">
+                        <li style="margin-bottom: 5px;">Evening from 6:30 PM (সন্ধিয়া ৬:৩০ বজাৰ পৰা)</li>
                         <li>Every Sunday from 10:30 AM (প্ৰতি ৰবিবাৰে ৰাতিপুৱা ১০:৩০ বজাৰ পৰা)</li>
                     </ul>
                 </div>
 
-                <p><strong>Core Services:</strong> Astrology, Palmistry, Vastu, Gem Stone </p>
-
-                <p><strong>কোষ্ঠী প্ৰস্তুত, কোষ্ঠী বিচাৰ, হস্তৰেখা বিচাৰ, বাস্তু বিচাৰ, গ্ৰহ ৰত্ন</strong></p>
-                <a href="services.html" class="btn">Explore Services</a>
+                <div style="background-color: var(--primary-color); color: white; padding: 20px; border-radius: 8px; margin: 25px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="text-align: center; margin-bottom: 8px; font-size: 1.1rem;"><strong style="color: var(--accent-color);">Core Services:</strong> Astrology, Palmistry, Vastu, Gem Stone </p>
+                    <p style="text-align: center; font-size: 1.2rem;"><strong>কোষ্ঠী প্ৰস্তুত, কোষ্ঠী বিচাৰ, হস্তৰেখা বিচাৰ, বাস্তু বিচাৰ, গ্ৰহ ৰত্ন</strong></p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 25px;">
+                    <a href="services.html" class="btn" style="font-size: 1.1rem; padding: 12px 30px;">Explore Services</a>
+                </div>
             </div>
         </section>
 
         <section class="certificates">
-            <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary-color);">Degrees, Certifications & Medals</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary-color); font-size: 2rem;">Degrees, Certifications & Medals</h2>
             
             <div class="grid-container">
                 <div class="cert-card">
